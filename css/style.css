@@ -1,69 +1,165 @@
-/*==========================
-    IMPORT FONT
-==========================*/
+/* ==========================================
+   THE LAST LETTER
+   Premium UI v1
+========================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
-
-/*==========================
-    ROOT
-==========================*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 :root{
 
-    --pink:#ff5c9a;
-    --pink2:#ff8eb9;
-    --pink3:#ffd7e8;
+    --pink:#ff5d8f;
+    --pink-light:#ffdbe9;
+    --pink-soft:#fff4f8;
+    --text:#5c5062;
     --white:#ffffff;
 
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
 
     font-family:'Poppins',sans-serif;
 
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
     background:linear-gradient(
-    135deg,
-    #fff5f8,
-    #ffe8f2,
-    #ffd5e6,
-    #fff3f8
+    -45deg,
+    #fff6f9,
+    #ffe9f2,
+    #ffdbe9,
+    #fff4f8
     );
 
     background-size:400% 400%;
 
-    animation:bgMove 12s ease infinite;
-
-    overflow:hidden;
+    animation:bgMove 15s ease infinite;
 
 }
 
-/*==========================
-    CARD
-==========================*/
+/* =======================
+BACKGROUND
+======================= */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-5;
+
+}
+
+/* Blur Circle */
+
+.blur{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.45;
+
+    z-index:-4;
+
+}
+
+.blur1{
+
+    width:420px;
+
+    height:420px;
+
+    background:#ff9cc2;
+
+    top:-120px;
+
+    left:-100px;
+
+}
+
+.blur2{
+
+    width:380px;
+
+    height:380px;
+
+    background:#ffd2e4;
+
+    bottom:-120px;
+
+    right:-80px;
+
+}
+
+/* =======================
+CONTAINER
+======================= */
+
+.container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+/* =======================
+CARD
+======================= */
 
 .card{
 
     position:relative;
 
-    width:min(92%,560px);
+    width:100%;
 
-    padding:60px 45px;
+    max-width:520px;
 
-    border-radius:35px;
+    padding:55px 45px;
 
-    background:rgba(255,255,255,.30);
+    border-radius:32px;
 
-    backdrop-filter:blur(22px);
+    background:rgba(255,255,255,.55);
 
-    border:2px solid rgba(255,255,255,.5);
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.7);
+
+    text-align:center;
+
+    overflow:hidden;
 
     box-shadow:
 
-    0 15px 60px rgba(255,105,180,.20),
+    0 25px 60px rgba(255,94,143,.18),
 
-    inset 0 1px 0 rgba(255,255,255,.7);
+    inset 0 1px 0 rgba(255,255,255,.8);
 
-    overflow:hidden;
+    animation:cardShow 1s ease;
 
 }
 
@@ -71,137 +167,145 @@ body{
 
 .card::before{
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:absolute;
 
-width:250px;
+    width:260px;
 
-height:250px;
+    height:260px;
 
-background:#ffc0d8;
+    border-radius:50%;
 
-filter:blur(90px);
+    background:#ffd0e3;
 
-top:-120px;
+    filter:blur(80px);
 
-right:-100px;
+    top:-120px;
 
-opacity:.6;
+    right:-100px;
 
-border-radius:50%;
+    opacity:.6;
 
 }
 
-/*==========================
-    GIFT
-==========================*/
+/* =======================
+GIFT
+======================= */
 
 .gift{
 
-font-size:95px;
+    font-size:88px;
 
-margin-bottom:20px;
+    margin-bottom:18px;
 
-animation:giftFloat 2.5s ease-in-out infinite;
+    animation:giftFloat 2.6s ease-in-out infinite;
 
-filter:drop-shadow(0 12px 20px rgba(255,105,180,.35));
+    position:relative;
+
+    z-index:2;
 
 }
 
-/*==========================
-    TITLE
-==========================*/
+/* =======================
+TITLE
+======================= */
 
 .card h1{
 
-font-family:'Great Vibes',cursive;
+    position:relative;
 
-font-size:65px;
+    z-index:2;
 
-font-weight:400;
+    font-family:'Great Vibes',cursive;
 
-color:var(--pink);
+    font-size:62px;
 
-margin-bottom:15px;
+    color:var(--pink);
 
-text-shadow:
-
-0 5px 15px rgba(255,105,180,.2);
+    margin-bottom:18px;
 
 }
 
-/*==========================
-    TEXT
-==========================*/
+/* =======================
+TEXT
+======================= */
 
 .card p{
 
-font-size:17px;
+    position:relative;
 
-line-height:1.9;
+    z-index:2;
 
-color:#7a6572;
+    color:var(--text);
 
-font-weight:500;
+    font-size:17px;
 
-margin-bottom:35px;
+    line-height:1.9;
+
+    margin-bottom:35px;
 
 }
 
-/*==========================
-    BUTTON
-==========================*/
+/* =======================
+BUTTON
+======================= */
 
 #openBtn{
 
-padding:16px 42px;
+    position:relative;
 
-border:none;
+    z-index:2;
 
-border-radius:60px;
+    border:none;
 
-background:linear-gradient(
-135deg,
-var(--pink),
-var(--pink2)
-);
+    outline:none;
 
-color:white;
+    cursor:pointer;
 
-font-size:16px;
+    padding:16px 42px;
 
-font-weight:600;
+    border-radius:999px;
 
-cursor:pointer;
+    background:linear-gradient(
+    135deg,
+    #ff6da1,
+    #ff8db8
+    );
 
-transition:.35s;
+    color:white;
 
-box-shadow:
+    font-size:16px;
 
-0 12px 30px rgba(255,105,180,.35);
+    font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 15px 35px rgba(255,93,143,.35);
 
 }
 
 #openBtn:hover{
 
-transform:translateY(-5px) scale(1.05);
+    transform:translateY(-4px);
 
-box-shadow:
+    box-shadow:
 
-0 18px 45px rgba(255,105,180,.45);
+    0 22px 45px rgba(255,93,143,.45);
 
 }
 
 #openBtn:active{
 
-transform:scale(.95);
+    transform:scale(.96);
 
 }
 
-/*==========================
-    ANIMATION
-==========================*/
+/* =======================
+ANIMATION
+======================= */
 
 @keyframes bgMove{
 
@@ -235,7 +339,87 @@ transform:translateY(0);
 
 50%{
 
-transform:translateY(-15px);
+transform:translateY(-12px);
+
+}
+
+}
+
+@keyframes cardShow{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* =======================
+RESPONSIVE
+======================= */
+
+@media(max-width:768px){
+
+.card{
+
+padding:40px 28px;
+
+}
+
+.card h1{
+
+font-size:52px;
+
+}
+
+.gift{
+
+font-size:72px;
+
+}
+
+.card p{
+
+font-size:15px;
+
+}
+
+}
+
+@media(max-width:420px){
+
+.card{
+
+padding:35px 22px;
+
+}
+
+.card h1{
+
+font-size:46px;
+
+}
+
+.gift{
+
+font-size:60px;
+
+}
+
+#openBtn{
+
+width:100%;
 
 }
 
