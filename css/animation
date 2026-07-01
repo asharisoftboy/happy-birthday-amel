@@ -1,0 +1,358 @@
+/* ======================================
+   THE LAST LETTER
+   animation.css
+====================================== */
+
+/* Background Gradient */
+
+.gradient-bg{
+
+    animation:gradientMove 15s ease infinite;
+
+}
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* Gift */
+
+.gift{
+
+    animation:giftBounce 2.8s ease-in-out infinite;
+
+}
+
+@keyframes giftBounce{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+/* Loader Heart */
+
+.loader-heart{
+
+    animation:heartBeat 1s infinite;
+
+}
+
+@keyframes heartBeat{
+
+    0%{
+
+        transform:rotate(45deg) scale(1);
+
+    }
+
+    20%{
+
+        transform:rotate(45deg) scale(1.1);
+
+    }
+
+    40%{
+
+        transform:rotate(45deg) scale(.95);
+
+    }
+
+    60%{
+
+        transform:rotate(45deg) scale(1.15);
+
+    }
+
+    100%{
+
+        transform:rotate(45deg) scale(1);
+
+    }
+
+}
+
+/* Card */
+
+.card{
+
+    animation:cardShow 1.3s ease;
+
+}
+
+@keyframes cardShow{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(80px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Cloud */
+
+.cloud1{
+
+    animation:cloudLeft 30s linear infinite;
+
+}
+
+.cloud2{
+
+    animation:cloudRight 40s linear infinite;
+
+}
+
+@keyframes cloudLeft{
+
+    from{
+
+        transform:translateX(-80px);
+
+    }
+
+    to{
+
+        transform:translateX(160px);
+
+    }
+
+}
+
+@keyframes cloudRight{
+
+    from{
+
+        transform:translateX(100px);
+
+    }
+
+    to{
+
+        transform:translateX(-120px);
+
+    }
+
+}
+
+/* Button */
+
+#openBtn{
+
+    transition:.35s;
+
+}
+
+#openBtn:hover{
+
+    transform:translateY(-6px) scale(1.05);
+
+}
+
+#openBtn:active{
+
+    transform:scale(.95);
+
+}
+
+/* Sparkle */
+
+.sparkle{
+
+    position:absolute;
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:white;
+
+    opacity:.8;
+
+    animation:twinkle 2s infinite;
+
+}
+
+@keyframes twinkle{
+
+    0%{
+
+        opacity:.2;
+
+        transform:scale(.6);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.4);
+
+    }
+
+    100%{
+
+        opacity:.2;
+
+        transform:scale(.6);
+
+    }
+
+}
+
+/* Floating Heart */
+
+.heart{
+
+    position:absolute;
+
+    font-size:20px;
+
+    opacity:.6;
+
+    animation:heartFloat linear infinite;
+
+}
+
+@keyframes heartFloat{
+
+    from{
+
+        transform:translateY(120vh);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    80%{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(-120vh);
+
+        opacity:0;
+
+    }
+
+}
+
+/* Fade */
+
+.fade-in{
+
+    animation:fadeIn .8s ease;
+
+}
+
+.fade-out{
+
+    animation:fadeOut .8s ease forwards;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes fadeOut{
+
+    from{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        opacity:0;
+
+    }
+
+}
+
+/* Pulse Glow */
+
+.glow{
+
+    animation:glow 2s infinite;
+
+}
+
+@keyframes glow{
+
+    0%{
+
+        box-shadow:0 0 10px rgba(255,255,255,.2);
+
+    }
+
+    50%{
+
+        box-shadow:0 0 35px rgba(255,255,255,.8);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 10px rgba(255,255,255,.2);
+
+    }
+
+}
