@@ -1,418 +1,242 @@
-/* ===========================
-   RESET
-=========================== */
+/*==========================
+    IMPORT FONT
+==========================*/
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
 
-html{
-    scroll-behavior:smooth;
+/*==========================
+    ROOT
+==========================*/
+
+:root{
+
+    --pink:#ff5c9a;
+    --pink2:#ff8eb9;
+    --pink3:#ffd7e8;
+    --white:#ffffff;
+
 }
 
 body{
 
     font-family:'Poppins',sans-serif;
 
-    overflow:hidden;
-
-    background:#ffd7e6;
-
-    color:#fff;
-
-}
-
-/* ===========================
-   LOADING
-=========================== */
-
-#loading{
-
-    position:fixed;
-
-    inset:0;
-
-    background:linear-gradient(135deg,#ffb6d5,#ff8fc4,#ffc8dd);
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    z-index:9999;
-
-}
-
-.loader-heart{
-
-    width:90px;
-    height:90px;
-
-    background:#fff;
-
-    transform:rotate(45deg);
-
-    position:relative;
-
-    margin-bottom:35px;
-
-}
-
-.loader-heart::before,
-.loader-heart::after{
-
-    content:"";
-
-    width:90px;
-    height:90px;
-
-    background:#fff;
-
-    border-radius:50%;
-
-    position:absolute;
-
-}
-
-.loader-heart::before{
-
-    left:-45px;
-
-}
-
-.loader-heart::after{
-
-    top:-45px;
-
-}
-
-#loading h2{
-
-    color:white;
-
-    font-weight:600;
-
-    margin-bottom:20px;
-
-}
-
-.progress{
-
-    width:280px;
-
-    height:10px;
-
-    background:rgba(255,255,255,.3);
-
-    border-radius:50px;
-
-    overflow:hidden;
-
-}
-
-.progress-bar{
-
-    width:0;
-
-    height:100%;
-
-    background:white;
-
-}
-
-/* ===========================
-   OPENING
-=========================== */
-
-#opening{
-
-    position:relative;
-
-    width:100%;
-
-    height:100vh;
-
-    overflow:hidden;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-/* ===========================
-   BACKGROUND
-=========================== */
-
-.gradient-bg{
-
     background:linear-gradient(
-        135deg,
-        #ffd1e6,
-        #ffc2dd,
-        #ffb0d3,
-        #ffe6f2
+    135deg,
+    #fff5f8,
+    #ffe8f2,
+    #ffd5e6,
+    #fff3f8
     );
 
     background-size:400% 400%;
-}
 
-/* ===========================
-   CARD
-=========================== */
-.card::before{
+    animation:bgMove 12s ease infinite;
 
-    content:"";
-
-    position:absolute;
-
-    inset:-2px;
-
-    border-radius:35px;
-
-    padding:2px;
-
-    background:linear-gradient(
-    135deg,
-    #ff7eb6,
-    #ffc3da,
-    #ffffff,
-    #ff7eb6
-    );
-
-    -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-
-    -webkit-mask-composite:xor;
-
-    mask-composite:exclude;
-
-    pointer-events:none;
+    overflow:hidden;
 
 }
+
+/*==========================
+    CARD
+==========================*/
+
 .card{
-
-    width:90%;
-    max-width:560px;
-
-    background:rgba(255,255,255,.22);
-
-    backdrop-filter:blur(20px);
-
-    border-radius:35px;
-
-    padding:55px 45px;
-
-    text-align:center;
-
-    border:2px solid rgba(255,105,180,.25);
-
-    box-shadow:
-    0 20px 50px rgba(255,105,180,.15),
-    inset 0 0 0 1px rgba(255,255,255,.3);
 
     position:relative;
 
-    z-index:10;
+    width:min(92%,560px);
 
-}
+    padding:60px 45px;
 
-.gift{
+    border-radius:35px;
 
-    font-size:95px;
+    background:rgba(255,255,255,.30);
 
-    margin-bottom:25px;
+    backdrop-filter:blur(22px);
 
-    filter:drop-shadow(0 8px 18px rgba(255,105,180,.35));
-
-}
-
-.card h1{
-
-    font-family:'Pacifico',cursive;
-
-    font-size:48px;
-
-    color:#ff4f9a;
-
-    margin-bottom:20px;
-
-    text-shadow:
-
-    0 3px 10px rgba(255,255,255,.9),
-
-    0 0 25px rgba(255,105,180,.4);
-
-}
-
-.card p{
-
-    color:#7b5675;
-
-    font-size:17px;
-
-    line-height:1.9;
-
-    font-weight:500;
-
-    margin-top:15px;
-
-}
-
-#openBtn{
-
-    margin-top:40px;
-
-    padding:17px 45px;
-
-    border:none;
-
-    border-radius:60px;
-
-    background:linear-gradient(135deg,#ff69b4,#ff8fc8);
-
-    color:white;
-
-    font-size:17px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:.35s;
+    border:2px solid rgba(255,255,255,.5);
 
     box-shadow:
 
-    0 12px 35px rgba(255,105,180,.35);
+    0 15px 60px rgba(255,105,180,.20),
+
+    inset 0 1px 0 rgba(255,255,255,.7);
+
+    overflow:hidden;
+
+}
+
+/* Glow */
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+width:250px;
+
+height:250px;
+
+background:#ffc0d8;
+
+filter:blur(90px);
+
+top:-120px;
+
+right:-100px;
+
+opacity:.6;
+
+border-radius:50%;
+
+}
+
+/*==========================
+    GIFT
+==========================*/
+
+.gift{
+
+font-size:95px;
+
+margin-bottom:20px;
+
+animation:giftFloat 2.5s ease-in-out infinite;
+
+filter:drop-shadow(0 12px 20px rgba(255,105,180,.35));
+
+}
+
+/*==========================
+    TITLE
+==========================*/
+
+.card h1{
+
+font-family:'Great Vibes',cursive;
+
+font-size:65px;
+
+font-weight:400;
+
+color:var(--pink);
+
+margin-bottom:15px;
+
+text-shadow:
+
+0 5px 15px rgba(255,105,180,.2);
+
+}
+
+/*==========================
+    TEXT
+==========================*/
+
+.card p{
+
+font-size:17px;
+
+line-height:1.9;
+
+color:#7a6572;
+
+font-weight:500;
+
+margin-bottom:35px;
+
+}
+
+/*==========================
+    BUTTON
+==========================*/
+
+#openBtn{
+
+padding:16px 42px;
+
+border:none;
+
+border-radius:60px;
+
+background:linear-gradient(
+135deg,
+var(--pink),
+var(--pink2)
+);
+
+color:white;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:
+
+0 12px 30px rgba(255,105,180,.35);
 
 }
 
 #openBtn:hover{
 
-    transform:translateY(-5px);
+transform:translateY(-5px) scale(1.05);
 
-    box-shadow:
+box-shadow:
 
-    0 20px 45px rgba(255,105,180,.45);
-
-}
-
-/* ===========================
-   DECORATION
-=========================== */
-
-.cloud{
-
-    position:absolute;
-
-    width:260px;
-
-    height:90px;
-
-    background:rgba(255,255,255,.45);
-
-    border-radius:60px;
-
-    filter:blur(2px);
+0 18px 45px rgba(255,105,180,.45);
 
 }
 
-.cloud::before{
+#openBtn:active{
 
-    content:"";
-
-    position:absolute;
-
-    width:90px;
-
-    height:90px;
-
-    background:inherit;
-
-    border-radius:50%;
-
-    left:25px;
-
-    top:-35px;
+transform:scale(.95);
 
 }
 
-.cloud::after{
+/*==========================
+    ANIMATION
+==========================*/
 
-    content:"";
+@keyframes bgMove{
 
-    position:absolute;
+0%{
 
-    width:120px;
-
-    height:120px;
-
-    background:inherit;
-
-    border-radius:50%;
-
-    right:30px;
-
-    top:-55px;
+background-position:0% 50%;
 
 }
 
-.cloud1{
+50%{
 
-    top:80px;
-
-    left:-120px;
+background-position:100% 50%;
 
 }
 
-.cloud2{
+100%{
 
-    bottom:120px;
-
-    right:-120px;
+background-position:0% 50%;
 
 }
 
-/* ===========================
-   PARTICLES
-=========================== */
+}
 
-#particles,
-.sparkles,
-.floating-hearts{
+@keyframes giftFloat{
 
-    position:absolute;
+0%,100%{
 
-    inset:0;
-
-    pointer-events:none;
+transform:translateY(0);
 
 }
 
-/* ===========================
-   TRANSITION
-=========================== */
+50%{
 
-#transition{
+transform:translateY(-15px);
 
-    position:fixed;
-
-    inset:0;
-
-    background:#fff;
-
-    z-index:999;
-
-    opacity:0;
-
-    visibility:hidden;
+}
 
 }
