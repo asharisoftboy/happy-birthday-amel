@@ -1,0 +1,375 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    overflow:hidden;
+
+    background:#ffd7e6;
+
+    color:#fff;
+
+}
+
+/* ===========================
+   LOADING
+=========================== */
+
+#loading{
+
+    position:fixed;
+
+    inset:0;
+
+    background:linear-gradient(135deg,#ffb6d5,#ff8fc4,#ffc8dd);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.loader-heart{
+
+    width:90px;
+    height:90px;
+
+    background:#fff;
+
+    transform:rotate(45deg);
+
+    position:relative;
+
+    margin-bottom:35px;
+
+}
+
+.loader-heart::before,
+.loader-heart::after{
+
+    content:"";
+
+    width:90px;
+    height:90px;
+
+    background:#fff;
+
+    border-radius:50%;
+
+    position:absolute;
+
+}
+
+.loader-heart::before{
+
+    left:-45px;
+
+}
+
+.loader-heart::after{
+
+    top:-45px;
+
+}
+
+#loading h2{
+
+    color:white;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+.progress{
+
+    width:280px;
+
+    height:10px;
+
+    background:rgba(255,255,255,.3);
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.progress-bar{
+
+    width:0;
+
+    height:100%;
+
+    background:white;
+
+}
+
+/* ===========================
+   OPENING
+=========================== */
+
+#opening{
+
+    position:relative;
+
+    width:100%;
+
+    height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* ===========================
+   BACKGROUND
+=========================== */
+
+.gradient-bg{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+    -45deg,
+    #ffb3d9,
+    #ffcce7,
+    #ffdff2,
+    #fff2fa
+    );
+
+    background-size:400% 400%;
+
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card{
+
+    width:90%;
+
+    max-width:520px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:35px;
+
+    padding:45px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.35);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.15);
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+.gift{
+
+    font-size:85px;
+
+    margin-bottom:20px;
+
+}
+
+.card h1{
+
+    font-family:'Pacifico',cursive;
+
+    color:white;
+
+    font-size:48px;
+
+    margin-bottom:18px;
+
+}
+
+.card p{
+
+    color:white;
+
+    line-height:1.9;
+
+    font-size:17px;
+
+}
+
+#openBtn{
+
+    margin-top:35px;
+
+    padding:16px 42px;
+
+    border:none;
+
+    border-radius:60px;
+
+    background:white;
+
+    color:#ff5fa2;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+#openBtn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 35px rgba(255,255,255,.4);
+
+}
+
+/* ===========================
+   DECORATION
+=========================== */
+
+.cloud{
+
+    position:absolute;
+
+    width:260px;
+
+    height:90px;
+
+    background:rgba(255,255,255,.45);
+
+    border-radius:60px;
+
+    filter:blur(2px);
+
+}
+
+.cloud::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:90px;
+
+    height:90px;
+
+    background:inherit;
+
+    border-radius:50%;
+
+    left:25px;
+
+    top:-35px;
+
+}
+
+.cloud::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+
+    height:120px;
+
+    background:inherit;
+
+    border-radius:50%;
+
+    right:30px;
+
+    top:-55px;
+
+}
+
+.cloud1{
+
+    top:80px;
+
+    left:-120px;
+
+}
+
+.cloud2{
+
+    bottom:120px;
+
+    right:-120px;
+
+}
+
+/* ===========================
+   PARTICLES
+=========================== */
+
+#particles,
+.sparkles,
+.floating-hearts{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+/* ===========================
+   TRANSITION
+=========================== */
+
+#transition{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#fff;
+
+    z-index:999;
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
